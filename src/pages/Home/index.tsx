@@ -1,12 +1,13 @@
 import React from 'react';
-import { Navbar } from '../../components/Navbar';
 
-// import { Container } from './styles';
+import { Navbar } from '../../components/Navbar';
+import { Banner } from './Banner';
 
 const Home: React.FC = () => {
   return (
     <>
       <Navbar />
+      <Banner />
     </>
   );
 };

@@ -5,8 +5,12 @@ const lightTheme = {
       light: '#585858',
     },
     grey: {
+      dark: '#BDBDBD',
       main: '#7A7A7A',
       light: '#E6E8EA',
+    },
+    white: {
+      main: '#ffff',
     },
     red: {
       main: '#F8475F',
