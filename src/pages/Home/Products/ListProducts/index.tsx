@@ -7,12 +7,15 @@ import { StarIcon } from '../../../../styles/assets/customIcons';
 import { Button } from '../../../../components/Button';
 
 import { Container, Product, Stars, ContainerPrice } from './styles';
+import { useShoppingCart } from '../../../../hooks/shoppingCart';
 
 interface IListProductsProps {
   products: IProduct[];
 }
 
 const ListProducts: React.FC<IListProductsProps> = ({ products }) => {
+  const { addProduct } = useShoppingCart();
+
   return (
     <Container>
       {products.length !== 0 &&
@@ -48,7 +51,23 @@ const ListProducts: React.FC<IListProductsProps> = ({ products }) => {
                         )}
                     </span>
                   </ContainerPrice>
-                  {!listPrice && <Button>Comprar</Button>}
+                  {!listPrice && (
+                    <Button
+                      onClick={() =>
+                        addProduct({
+                          productId,
+                          imageUrl,
+                          productName,
+                          stars,
+                          price,
+                          installments,
+                          listPrice,
+                        })
+                      }
+                    >
+                      Comprar
+                    </Button>
+                  )}
                 </div>
               </Product>
             )
