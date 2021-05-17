@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
   left: 0;
   right: 0;
 
-  z-index: 99;
+  z-index: 3;
 
   background: ${({ theme: { pallete } }) => pallete.white.main};
 
@@ -81,4 +81,35 @@ export const Account = styled.div`
   }
 `;
 
-export const ButtonShoppingCart = styled.div``;
+export const ButtonShoppingCart = styled.div<{ isProductinCart: boolean }>`
+  position: relative;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  ${({ isProductinCart, theme: { pallete } }) =>
+    isProductinCart &&
+    css`
+      span.tooltip {
+        position: absolute;
+        top: 0%;
+        right: -125%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 18px;
+        height: 18px;
+
+        border-radius: 50%;
+
+        background: ${pallete.red.main};
+
+        color: ${pallete.white.main};
+        font-weight: bold;
+        font-size: 10px;
+      }
+    `}
+`;
