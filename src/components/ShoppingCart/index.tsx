@@ -13,7 +13,7 @@ interface IShoppingCartProps {
 }
 
 const ShoppingCart: React.FC<IShoppingCartProps> = ({ onClose }) => {
-  const { products } = useShoppingCart();
+  const { products, removeProduct } = useShoppingCart();
 
   return (
     <Wrapper>
@@ -29,20 +29,24 @@ const ShoppingCart: React.FC<IShoppingCartProps> = ({ onClose }) => {
           </button>
         </div>
         <ListProducts>
-          {products.map(({ product: { imageUrl, productName }, quantity }) => (
-            <Product>
-              <img src={imageUrl} alt="Product" />
-              <div className="content">
-                <span className="name">{productName}</span>
-                <span className="quantity">
-                  Quantidade: <strong> {quantity}</strong>
-                </span>
-                <div className="footer">
-                  <Button>Remover</Button>
+          {products.map(
+            ({ product: { productId, imageUrl, productName }, quantity }) => (
+              <Product>
+                <img src={imageUrl} alt="Product" />
+                <div className="content">
+                  <span className="name">{productName}</span>
+                  <span className="quantity">
+                    Quantidade: <strong> {quantity}</strong>
+                  </span>
+                  <div className="footer">
+                    <Button onClick={() => removeProduct(productId)}>
+                      Remover
+                    </Button>
+                  </div>
                 </div>
-              </div>
-            </Product>
-          ))}
+              </Product>
+            )
+          )}
         </ListProducts>
         <Button width="100%" height="50px">
           Realizar Compra!

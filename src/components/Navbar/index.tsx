@@ -42,7 +42,9 @@ const Navbar: React.FC = () => {
             isProductinCart={products.length > 0}
           >
             <img src={shoppingCartIcon} alt="Shopping Cart Icon" />
-            <span className="tooltip">{products.length}</span>
+            {products.length > 0 && (
+              <span className="tooltip">{products.length}</span>
+            )}
           </ButtonShoppingCart>
         </Container>
       </Wrapper>
