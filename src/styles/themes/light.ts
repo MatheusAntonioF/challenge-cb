@@ -16,6 +16,9 @@ const lightTheme = {
     red: {
       main: '#F8475F',
     },
+    blue: {
+      main: '#2196f3',
+    },
   },
 };
 
