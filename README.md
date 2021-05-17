@@ -19,5 +19,31 @@ The purpose of this challenge is create a simple homepage layout of a e-commerce
 - [x] Use [styled-components](https://github.com/styled-components/styled-components) to make a application style
 - [x] To manage products in shopping cart, create a hook using [context api](https://pt-br.reactjs.org/docs/context.html) of react
 
+## Execute this applicatino
+
+1. Clone this repository
+
+```bash
+git clone https://github.com/MatheusAntonioF/challenge-cb.git
+
+```
+
+2. Open folder and install the dependences
+
+```bash
+yarn
+## or
+npm install
+```
+
+3. Run a command to start application
+
+```bash
+yarn start
+## or
+npm run start
+```
+
 ## ✨ Preview ✨
+
 ![image](https://user-images.githubusercontent.com/40186689/118433915-73502c00-b6b2-11eb-927b-e5ee453a17d2.png)
