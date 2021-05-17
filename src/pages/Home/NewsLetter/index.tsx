@@ -41,9 +41,12 @@ const NewsLetter: React.FC = () => {
 
       const { name, email } = formData;
 
-      const { status } = await api.post('newsletter', { name, email });
+      const { status: statusCode } = await api.post('newsletter', {
+        name,
+        email,
+      });
 
-      setIsSentNewsLetter(status === 200);
+      setIsSentNewsLetter(statusCode === 200);
       setIsLoading(false);
     } catch (err) {
       setIsLoading(false);
