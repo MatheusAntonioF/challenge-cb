@@ -8,6 +8,7 @@ const lightTheme = {
       dark: '#BDBDBD',
       main: '#7A7A7A',
       light: '#E6E8EA',
+      custom: '#F2F2F2',
     },
     white: {
       main: '#ffff',

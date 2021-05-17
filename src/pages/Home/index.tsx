@@ -3,6 +3,7 @@ import React from 'react';
 import { Navbar } from '../../components/Navbar';
 import { Banner } from './Banner';
 import { Products } from './Products';
+import { NewsLetter } from './NewsLetter';
 
 const Home: React.FC = () => {
   return (
@@ -10,6 +11,7 @@ const Home: React.FC = () => {
       <Navbar />
       <Banner />
       <Products />
+      <NewsLetter />
     </>
   );
 };
