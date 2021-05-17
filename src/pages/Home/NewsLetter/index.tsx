@@ -27,6 +27,7 @@ const NewsLetter: React.FC = () => {
   const handleSubmit = useCallback(async (formData: IDataNewsLetter) => {
     try {
       setIsLoading(true);
+
       formRef.current?.setErrors({});
 
       const schema = Yup.object().shape({
@@ -43,14 +44,15 @@ const NewsLetter: React.FC = () => {
       const { status } = await api.post('newsletter', { name, email });
 
       setIsSentNewsLetter(status === 200);
+      setIsLoading(false);
     } catch (err) {
+      setIsLoading(false);
+
       if (err instanceof Yup.ValidationError) {
         const errors = getValidationErrors(err);
 
         formRef.current?.setErrors(errors);
       }
-    } finally {
-      setIsLoading(false);
     }
   }, []);
 
@@ -79,7 +81,9 @@ const NewsLetter: React.FC = () => {
               <Form ref={formRef} onSubmit={handleSubmit}>
                 <Input name="name" placeholder="Digite seu nome" />
                 <Input name="email" placeholder="Digite seu email" />
-                <Button height="100%">Eu Quero!</Button>
+                <Button type="submit" height="100%">
+                  Eu Quero!
+                </Button>
               </Form>
             </>
           )}
