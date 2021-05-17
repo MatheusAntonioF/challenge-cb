@@ -40,9 +40,18 @@ export const Content = styled.div`
 
       margin-top: 16px;
 
-      > input + input {
+      > div + div {
         margin: 0 8px;
       }
+    }
+
+    > div.sent-newsletter {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      height: 100%;
     }
   `}
 `;
