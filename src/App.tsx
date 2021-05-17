@@ -1,13 +1,16 @@
 import React from 'react';
+import { ModuleProviders } from './hooks';
 
 import { Routes } from './routes';
 import { SharedStyles } from './styles';
 
 const App: React.FC = () => {
   return (
-    <SharedStyles>
-      <Routes />
-    </SharedStyles>
+    <ModuleProviders>
+      <SharedStyles>
+        <Routes />
+      </SharedStyles>
+    </ModuleProviders>
   );
 };
 
