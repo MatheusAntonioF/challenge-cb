@@ -18,6 +18,8 @@ const GlobalStyles = createGlobalStyle`
     width: 100vw;
     font-family: 'Nunito', sans-serif;
     -webkit-font-smoothing: antialiased !important;
+
+    overflow-x: hidden;
   }
 
   body, input, button {

@@ -6,6 +6,10 @@ export const Wrapper = styled.div`
   left: 0;
   right: 0;
 
+  z-index: 99;
+
+  background: ${({ theme: { pallete } }) => pallete.white.main};
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,7 +21,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  max-width: 1000px;
+  max-width: 1100px;
   width: 100%;
 `;
 
