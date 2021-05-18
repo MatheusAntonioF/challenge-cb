@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.div`
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -16,13 +16,60 @@ export const Wrapper = styled.div`
   height: 80px;
 `;
 
-export const Container = styled.div`
+export const Container = styled.div<{ isMobileDevice: boolean }>`
   display: flex;
   align-items: center;
   justify-content: space-between;
 
   max-width: 1100px;
   width: 100%;
+
+  ${({ isMobileDevice }) =>
+    isMobileDevice &&
+    css`
+      align-items: stretch;
+      flex-direction: column;
+
+      padding: 0 1.2rem;
+
+      div.upper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        width: 92%;
+
+        > button.burguer {
+          display: grid;
+          place-items: center;
+
+          outline: 0;
+          border: 0;
+
+          width: 22px;
+          height: 15px;
+
+          > img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        > img {
+          height: 25px;
+        }
+      }
+
+      div.bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        margin-top: 5px;
+
+        width: 100%;
+      }
+    `}
 `;
 
 export const LogoIcon = styled.img`

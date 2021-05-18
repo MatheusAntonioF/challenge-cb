@@ -2,13 +2,26 @@ import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: flex-start;
 
   width: 100%;
+  height: calc(100% - 35px);
+
+  overflow-y: hidden;
+  overflow-x: scroll;
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px transparent;
+    border-radius: 10px;
+  }
 
   > div + div {
-    margin-left: 99px;
+    margin-left: 6.188rem;
   }
 `;
 
@@ -21,13 +34,14 @@ export const Product = styled.div<{ isOff: boolean }>`
   justify-content: flex-start;
 
   width: 216px;
-  height: 353px;
+  height: 100%;
 
   transition: all 250ms ease-in;
 
   > img {
     width: 100%;
     height: 200px;
+    min-height: 200px;
   }
 
   ${({ isOff, theme: { pallete } }) => css`
@@ -40,6 +54,9 @@ export const Product = styled.div<{ isOff: boolean }>`
       padding: 7px 24px;
 
       flex: 1;
+
+      width: 100%;
+      height: auto;
 
       transition: all 250ms ease-in;
 

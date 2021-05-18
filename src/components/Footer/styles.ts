@@ -11,6 +11,32 @@ export const Wrapper = styled.div`
   ${({ theme: { pallete } }) => css`
     background: ${pallete.black.main};
   `}
+
+  @media screen and (max-width: 576px) {
+    height: 386px;
+
+    padding: 0px 16px;
+
+    div.content {
+      flex-direction: column;
+      align-items: flex-start !important;
+
+      margin-top: 15px;
+    }
+
+    div.middle-side {
+      width: 100%;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    div.right-side {
+      width: 100%;
+      justify-content: space-around;
+    }
+  }
 `;
 
 export const Container = styled.div`
