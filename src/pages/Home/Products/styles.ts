@@ -8,17 +8,19 @@ export const Wrapper = styled.div`
   width: 100%;
 
   margin-top: 25px;
+
+  padding: 0 1rem;
 `;
 
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
 
   width: 100%;
   max-width: 1100px;
-  height: 380px;
+  height: 445px;
 `;
 
 export const Title = styled.div`

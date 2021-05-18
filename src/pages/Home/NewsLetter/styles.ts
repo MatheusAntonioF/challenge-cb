@@ -6,7 +6,8 @@ export const Container = styled.div`
   justify-content: center;
 
   width: 100%;
-  height: 146px;
+  height: auto;
+  min-height: 146px;
 
   margin-top: 60px;
   padding: 36px 0;
@@ -14,6 +15,10 @@ export const Container = styled.div`
   ${({ theme: { pallete } }) => css`
     background: ${pallete.grey.custom};
   `}
+
+  @media screen and (max-width: 576px) {
+    height: 280px;
+  }
 `;
 
 export const Content = styled.div`
@@ -21,6 +26,8 @@ export const Content = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  height: 100%;
 
   ${({ theme: { pallete } }) => css`
     > h4 {
@@ -54,4 +61,21 @@ export const Content = styled.div`
       height: 100%;
     }
   `}
+
+  @media screen and (max-width: 576px) {
+    justify-content: space-evenly;
+
+    > h4 {
+      text-align: center;
+    }
+    > form {
+      height: 100%;
+
+      flex-direction: column;
+
+      > div + div {
+        margin: 8px 0;
+      }
+    }
+  }
 `;

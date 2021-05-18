@@ -10,6 +10,14 @@ const showWrapper = keyframes`
   }
 `;
 
+const showMobileWrapper = keyframes`
+  from {
+    width: 0;
+  } to {
+    width: 100%;
+  }
+`;
+
 export const Wrapper = styled.div`
   position: fixed;
 
@@ -73,6 +81,12 @@ export const Container = styled.div`
         height: 20px;
       }
     }
+  }
+
+  @media screen and (max-width: 576px) {
+    animation-name: ${showMobileWrapper};
+
+    width: 100%;
   }
 `;
 

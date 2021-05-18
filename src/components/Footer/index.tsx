@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
             <span className="mail">brasil@corebiz.ag</span>
             <span className="contact">+55 11 3090 1039</span>
           </LeftSide>
-          <MiddleSide>
+          <MiddleSide className="middle-side">
             <Button width="195px" height="38px">
               <img src={mailIcon} alt="Mail" />
               <span>ENTRE EM CONTATO</span>
@@ -32,7 +32,7 @@ const Footer: React.FC = () => {
               <span>FALE COM O NOSSO CONSULTOR ONLINE</span>
             </Button>
           </MiddleSide>
-          <RightSide>
+          <RightSide className="right-side">
             <div className="logo">
               <span>Created By</span>
               <img src={logoWhiteIcon} alt="Logo" />
